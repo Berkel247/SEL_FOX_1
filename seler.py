@@ -1,0 +1,2 @@
+def druk():
+    print("tadam")

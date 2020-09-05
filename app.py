@@ -1,6 +1,6 @@
 from selenium import webdriver
 import openpyxl
-
+import seler
 
 def selerium():
     browser = webdriver.Firefox()
@@ -20,6 +20,8 @@ def selerium():
 
 workbook = openpyxl.load_workbook("config_file.xlsx")
 sheet = workbook["Config"]
+
+seler.druk()
 
 for row in range(2, sheet.max_row +1):
     login = sheet.cell(row, 1).value
