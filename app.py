@@ -1,15 +1,8 @@
 from selenium import webdriver
 import openpyxl
 
-#dodaj execeptiony na brak pliku i na błedny plik
-workbook = openpyxl.load_workbook("config_file.xlsx")
-sheet = workbook["Config"]
 
-for row in range(2, sheet.max_row +1):
-    login = sheet.cell(row, 1).value
-    passw = sheet.cell(row, 2).value
-    if login == None or passw == None:
-        break
+def selerium():
     browser = webdriver.Firefox()
     browser.get("https:github.com")
     sign_in = browser.find_element_by_link_text("Sign in")
@@ -20,8 +13,19 @@ for row in range(2, sheet.max_row +1):
     password_box.send_keys(passw)
     password_box.submit()
     browser.implicitly_wait(2)
-    market = browser.find_elements_by_class_name("js-selected-navigation-item")
-    market[2].click()
+    repoz = browser.find_element_by_css_selector("div#repos-container > ul.list-style-none > li > div > a > span[title=" +repo +"]")
+    repoz.click()
     browser.save_screenshot("screenshot" +str(row)+".png")
     browser.quit()
+
+workbook = openpyxl.load_workbook("config_file.xlsx")
+sheet = workbook["Config"]
+
+for row in range(2, sheet.max_row +1):
+    login = sheet.cell(row, 1).value
+    passw = sheet.cell(row, 2).value
+    repo = sheet.cell(row, 3).value
+    if login == None or passw == None or repo == None:
+        break
+    selerium()
 
