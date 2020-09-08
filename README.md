@@ -1,2 +1,2 @@
-# SEL_FOX_1
-selenium code for working in firefox first try + change
+# SEL_FOX_2
+selenium code for working in firefox with excel files as login base
