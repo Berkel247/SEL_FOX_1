@@ -1,2 +1,2 @@
-# SEL_FOX_1
+# SE_FF_1
 selenium code for working in firefox first try + change
