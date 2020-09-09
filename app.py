@@ -5,7 +5,7 @@ import openpyxl
 """
 this code requiers Firefox 80.0.1 and geckodriver-v0.27.0-win64.
 File should be named "config_file" and its spreadsheet "Config".
-First row is for Headers: login / passowrd / repository.
+First row is for Headers: login / password / repository.
 Next rows should contain data.
 
 Uses excel file to extract multiple login and passwords.
