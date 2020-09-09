@@ -10,7 +10,7 @@ Next rows should contain data.
 
 Uses excel file to extract multiple login and passwords.
 Logs into GitHub.com selects repo from file and saves screenshot.
-Logs out and quits Firefox.
+Soon will log out, now just quits Firefox.
 """
 
 def selerium():
